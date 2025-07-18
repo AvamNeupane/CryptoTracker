@@ -59,11 +59,11 @@ const NewsFeed = () => {
     );
   }
 
-  // Slice only if articles is an array and has elements
-  const first7Articles = Array.isArray(articles) ? articles.slice(0, 7) : [];
+  // Show all articles
+  const allArticles = Array.isArray(articles) ? articles : [];
 
   return (
-    <div className="news-feed-container" style={{ padding: '16px', border: '1px solid #eee', borderRadius: '8px' }}>
+    <div className="news-feed">
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
         <h2 style={{ fontSize: '24px', fontWeight: 'bold' }}>Crypto News</h2>
         {/* Simple badge-like display for article count */}
@@ -72,36 +72,38 @@ const NewsFeed = () => {
         </span>
       </div>
 
-      {first7Articles.length === 0 ? (
-        <p style={{ color: '#666' }}>No news articles available</p>
-      ) : (
-        <div className="news-articles-list" style={{ display: 'grid', gap: '16px' }}>
-          {first7Articles.map((article, index) => (
-            <div key={index} className="news-article-card" style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
-              <h3 style={{ fontSize: '18px', margin: '0 0 8px 0', lineHeight: '1.3' }}>
-                <a
-                  href={article.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{ textDecoration: 'none', color: '#007bff' }}
-                >
-                  {article.title}
-                </a>
-              </h3>
-              {article.description && (
-                <p style={{ fontSize: '14px', color: '#555', marginBottom: '8px', overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
-                  {article.description}
-                </p>
-              )}
-              {article.createdAt && (
-                <p style={{ fontSize: '12px', color: '#888' }}>
-                  {new Date(article.createdAt).toLocaleDateString()}
-                </p>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
+      {
+        allArticles.length === 0 ? (
+          <p style={{ color: '#666' }}>No news articles available</p>
+        ) : (
+          <div className="news-articles-list scrollable-news-list">
+            {allArticles.map((article, index) => (
+              <div key={index} className="news-article-card" style={{ border: '1px solid #ddd', borderRadius: '8px', padding: '16px', boxShadow: '0 2px 4px rgba(0,0,0,0.05)' }}>
+                <h3 style={{ fontSize: '18px', margin: '0 0 8px 0', lineHeight: '1.3' }}>
+                  <a
+                    className="news-article-link"
+                    href={article.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {article.title}
+                  </a>
+                </h3>
+                {article.description && (
+                  <p style={{ fontSize: '14px', color: '#555', marginBottom: '8px', overflow: 'hidden', textOverflow: 'ellipsis', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}>
+                    {article.description}
+                  </p>
+                )}
+                {article.createdAt && (
+                  <p style={{ fontSize: '12px', color: '#888' }}>
+                    {new Date(article.createdAt).toLocaleDateString()}
+                  </p>
+                )}
+              </div>
+            ))}
+          </div>
+        )
+      }
     </div>
   );
 };
