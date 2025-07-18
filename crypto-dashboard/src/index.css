@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.app-wrapper {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.news-feed {
+  background-color: rgb(204, 204, 231);
+  padding: 10px;
+  margin: 0;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  width: 300px; /* Or 250px, depending on your preferred "small" size */
+  flex-shrink: 0;
+}
+
+.currency-converter {
+  background-color: rgb(230, 223, 211);
+  padding: 10px;
+  margin: 0;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  text-align: center;
+  flex-grow: 1;
+  /* ADD THIS LINE */
+  min-width: 400px; /* Adjust this value based on how wide your converter content needs to be */
+  /* This prevents the converter from shrinking too much */
+}
+
+.exchange-rate {
+  background-color: rgb(221, 230, 221);
+  padding: 20px;
+  margin-top: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
+}
+
+.input-box {
+  background-color: rgb(218, 227, 238);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+button {
+  border: none;
+  float: right;
+  margin: 2px;
+}
+
+button:hover {
+  background-color: coral;
+}
+
+input, select {
+  border: none;
+}
