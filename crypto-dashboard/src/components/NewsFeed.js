@@ -25,7 +25,7 @@ const NewsFeed = () => {
 
       } catch (err) {
         console.error("API access is currently limited to conserve credits. Please try again later:", err);
-        setError("Failed to fetch news");
+        setError("API access is currently limited to conserve credits.");
         setArticles([]);
       } finally {
         setLoading(false);
