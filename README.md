@@ -1,5 +1,5 @@
 # Crypto Dashboard in React and Nodejs
-https://crypto-tracker-mu-rouge.vercel.app/
+https://crypto-tracker-mu-rouge.vercel.app/  ***Cannot get conversions or news without setting up API
 
 ### Why I created this project 
 I love all things crypto, and I am constantly buying and selling depending on trends or the news. But it became a hassle to keep going through different websites to see live prices, conversions and news. I decided to create my own website that includes all 3 to make my life easier and stay up to date!
